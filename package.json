@@ -1,0 +1,36 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsc-watch --skipLibCheck --lib \"ES2016\",\"DOM\" --onSuccess \"node ./dist/server.js\"",
+    "start": "npx pm2 start pm2.yaml",
+    "postinstall": "npm run compile",
+    "build": "npm run postinstall",
+    "check": "gts check",
+    "clean": "gts clean",
+    "compile": "npx tsc -p ./src --skipLibCheck --lib \"ES2016\",\"DOM\"",
+    "fix": "gts fix",
+    "test": "jest --coverage --forceExit",
+    "prepare": "npm.cmd run compile",
+    "pretest": "npm.cmd run compile",
+    "posttest": "npm.cmd run check"
+  },
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.9.1",
+    "@types/node": "^10.0.3",
+    "gts": "^1.1.2",
+    "jest": "^25.1.0",
+    "pm2": "^3.5.1",
+    "ts-jest": "^25.0.0",
+    "tsc-watch": "^4.0.0",
+    "typescript": "~3.7.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
