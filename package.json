@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "tsc-watch -p ./src --skipLibCheck --lib \"ES2016\",\"DOM\" --onSuccess \"node ./dist/server.js\"",
+    "dev": "tsc-watch -p ./src --skipLibCheck --lib \"ES2016\",\"DOM\" --onSuccess \"node ./dist/client.js\"",
     "start": "npx pm2 start pm2.yaml",
     "postinstall": "npm run compile",
     "build": "npm run postinstall",
