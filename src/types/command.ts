@@ -7,7 +7,7 @@ type TCommand = {
   args: string[];
 };
 
-type TCommandHandler = (message: TCommand) => void;
+type TCommandHandler = (command: TCommand) => void;
 
 type TCommands = {
   readonly [key: string]: TCommandHandler[];
