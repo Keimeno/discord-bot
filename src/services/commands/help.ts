@@ -1,5 +1,5 @@
 import { TCommand } from '../../types/command';
-import { sendMessageToUser } from '../../middleware/messageHandler';
+import { sendMessageToUser } from '../../utils/messageHandler';
 
 const help = async (command: TCommand) => {
   const message =
