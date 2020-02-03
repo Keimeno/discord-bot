@@ -19,8 +19,8 @@ const handleMessage = (DiscordMessage: Discord.Message) => {
 };
 
 const commandHandlers = (handlers: TCommandHandler[], command: TCommand) => {
-  handlers.forEach(el => {
-    el(command);
+  handlers.forEach(cb => {
+    cb(command);
   });
 };
 
