@@ -7,10 +7,12 @@ type TCommand = {
   args: string[];
 };
 
-type TCommandHandler = (command: TCommand) => void;
+type TShared = any;
+
+type TCommandHandler = (command: TCommand, shared: TShared) => void;
 
 type TCommands = {
   readonly [key: string]: TCommandHandler[];
 };
 
-export { TCommand, TCommandHandler, TCommands };
+export { TCommand, TCommandHandler, TCommands, TShared };
