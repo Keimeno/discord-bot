@@ -1,5 +1,5 @@
 apps:
-  - script: ./dist/server.js
+  - script: ./dist/client.js
     instances: max
     exec_mode: cluster
     name: 'discordbot'
