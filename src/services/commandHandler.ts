@@ -1,7 +1,7 @@
 import Discord from 'discord.js';
 import { isValidCommand, extractCommand } from '../utils/commandExtractor';
 import { commands } from './commands/index';
-import { TCommandHandler, TCommand } from '../types/command';
+import { TCommandHandler, TCommand, TShared } from '../types/command';
 
 const existingCommands = Object.keys(commands);
 
@@ -19,8 +19,10 @@ const handleMessage = (DiscordMessage: Discord.Message) => {
 };
 
 const commandHandlers = (handlers: TCommandHandler[], command: TCommand) => {
+  let shared: TShared = {};
+
   handlers.forEach(cb => {
-    cb(command);
+    cb(command, shared);
   });
 };
 

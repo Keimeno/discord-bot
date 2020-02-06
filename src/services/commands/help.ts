@@ -1,5 +1,5 @@
 import { TCommand } from '../../types/command';
-import { sendMessageToUser } from '../../utils/messageHandler';
+import { sendMessageToChannel } from '../../utils/messageHandler';
 
 const help = async (command: TCommand) => {
   const message =
@@ -10,7 +10,7 @@ const help = async (command: TCommand) => {
     '\n- !more               -' +
     '\n- !joke               -' +
     '\n=======================```';
-  await sendMessageToUser(message, command.author);
+  await sendMessageToChannel(message, command.message.channel.id, command.author.client);
 };
 
 export { help };
