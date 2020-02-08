@@ -3,13 +3,15 @@ import { sendMessageToChannel } from '../../utils/messageHandler';
 
 const help = async (command: TCommand) => {
   const message =
-    '```css\n=======================' +
+    '```css' + 
+    '\n=======================' +
     '\n------- [HELP]---------' +
     '\n- Possible Commands:  -' +
     '\n- !help               -' +
     '\n- !more               -' +
     '\n- !joke               -' +
-    '\n=======================```';
+    '\n=======================' + 
+    '```';
   await sendMessageToChannel(message, command.message.channel.id, command.author.client);
 };
 
