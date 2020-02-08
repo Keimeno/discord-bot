@@ -1,11 +1,11 @@
-import Discord from 'discord.js';
+import Discord, { TextChannel } from 'discord.js';
 
-type TCommand = {
-  readonly author: Discord.User;
-  readonly message: Discord.Message;
-  readonly command: string;
-  readonly args: string[];
-};
+type TCommand = Readonly<{
+  author: Discord.User;
+  message: Discord.Message;
+  command: string;
+  args: string[];
+}>;
 
 type TShared = any;
 
