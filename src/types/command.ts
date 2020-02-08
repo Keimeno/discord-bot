@@ -1,10 +1,10 @@
 import Discord from 'discord.js';
 
 type TCommand = {
-  author: Discord.User;
-  message: Discord.Message;
-  command: string;
-  args: string[];
+  readonly author: Discord.User;
+  readonly message: Discord.Message;
+  readonly command: string;
+  readonly args: string[];
 };
 
 type TShared = any;
