@@ -26,4 +26,4 @@ const commandHandlers = (handlers: TCommandHandler[], command: TCommand) => {
   });
 };
 
-export { handleMessage, registerCommandHandler };
+export { registerCommandHandler };
