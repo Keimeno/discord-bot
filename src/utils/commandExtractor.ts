@@ -1,19 +1,19 @@
 import { TCommand } from '../types/command';
 import Discord from 'discord.js';
 
-const extractCommand = (DiscordMessage: Discord.Message): TCommand => {
-  const arr = DiscordMessage.content.split(/!([A-Za-z0-9]+)/);
+const extractCommand = (discordMessage: Discord.Message): TCommand => {
+  const arr = discordMessage.content.split(/!([A-Za-z0-9]+)/);
   return {
-    author: DiscordMessage.author,
-    message: DiscordMessage,
+    author: discordMessage.author,
+    message: discordMessage,
     command: arr[1],
     args: arr[2].split(' ').filter(e => e),
   };
 };
 
-const isValidCommand = (DiscordMessage: Discord.Message) => {
-  if (DiscordMessage.content.length > 128) return null;
-  return DiscordMessage.content.match(/![A-Za-z]/);
+const isValidCommand = (discordMessage: Discord.Message) => {
+  if (discordMessage.content.length > 128) return null;
+  return discordMessage.content.match(/![A-Za-z]/);
 };
 
 export { extractCommand, isValidCommand };
