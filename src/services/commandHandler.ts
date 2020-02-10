@@ -9,9 +9,9 @@ const registerCommandHandler = (client: Discord.Client) => {
   client.on('message', handleMessage);
 };
 
-const handleMessage = (DiscordMessage: Discord.Message) => {
-  if (isValidCommand(DiscordMessage)) {
-    const command = extractCommand(DiscordMessage);
+const handleMessage = (discordMessage: Discord.Message) => {
+  if (isValidCommand(discordMessage)) {
+    const command = extractCommand(discordMessage);
     if (existingCommands.indexOf(command.command) !== -1) {
       commandHandlers(commands[command.command], command);
     }
@@ -19,7 +19,7 @@ const handleMessage = (DiscordMessage: Discord.Message) => {
 };
 
 const commandHandlers = (handlers: TCommandHandler[], command: TCommand) => {
-  let shared: TShared = {};
+  const shared: TShared = {};
 
   handlers.forEach(cb => {
     cb(command, shared);

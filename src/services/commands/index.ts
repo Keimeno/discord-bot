@@ -7,7 +7,7 @@ const commands: TCommands = {
       shared.options = 'hello world!';
     },
     async (command: TCommand, shared: TShared) => {
-      return await help(command);
+      await help(command);
     },
   ],
 };
