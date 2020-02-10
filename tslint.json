@@ -4,6 +4,7 @@
     "exclude": ["**/*.json"]
   },
   "rules": {
-    "no-any": false
+    "no-any": false,
+    "interface-over-type-literal": false
   }
 }
